@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FELIZ CUMPLEAÑOS COÑE  </title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Georgia', serif;
+            background: #faf3ec;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+        }
+        h1, h2 {
+            text-align: center;
+            color: #6B4226;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
+            margin: auto;
+        }
+
+        /* Estilos de la Galería */
+        .gallery-container {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .gallery-slide {
+            display: none;
+        }
+        .gallery-slide img {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        .gallery-slide img:hover {
+            transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            user-select: none;
+            transform: translateY(-50%);
+            z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* Estilos de la Línea de Tiempo */
+        .timeline-container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .timeline-event {
+            display: none;
+            background-color: #FFFAF0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .timeline-event.active {
+            display: block;
+        }
+        .controls p {
+            margin-bottom: 5px; /* Espacio entre el texto y los botones */
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 600px) {
+            .controls {
+                right: 10px; /* Ajusta la posición en pantallas más pequeñas */
+                top: 10px; 
+            }
+
+            .gallery-slide img {
+                width: 90%; /* Reduce el ancho de las imágenes en pantallas pequeñas */
+            }
+
+            h1, h2 {
+                font-size: 20px; /* Ajusta el tamaño de los títulos para pantallas pequeñas */
+            }
+
+            .timeline-event {
+                font-size: 14px; /* Ajusta el tamaño de fuente en la línea de tiempo */
+            }
+        }
+
+        /* Controles de Música */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los botones y el texto */
+            position: fixed; /* Mantiene los controles fijos en la parte inferior */
+            right: 20px; /* Ajusta la posición desde la derecha */
+            bottom: 20px; /* Ajusta la posición desde la parte inferior */
+            z-index: 1000; /* Asegura que los controles estén por encima del contenido */
+        }
+
+        .controls button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #d6bc8d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .controls button:hover {
+            background-color: #dbca4a;
+        }
+    </style>
+</head>
+<body>
+   
+    <h1 style="text-align: center; font-size: 1.2em; font-weight: bold; color: #6B4226; margin: 5px 0;">
+        🎈🎉FELIZ CUMPLEAÑOS🎉🎈
+    </h1>
+    <h2 style="text-align: center; font-size: 1.2em; font-weight: bold; color: #6B4226; margin: 5px 0;">
+        NEGRO
+    </h2>
+    
+    <!-- Galería de Fotos -->
+    <div class="gallery-container">
+        <div class="gallery-slide">
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <img src="imagenes/fotoprincipal.jpg" alt="Foto de ella 1" style="width: 400px;display: block; margin: auto; height: auto;">
+            <img src="imagenes/fotoprincipal2.jpg" alt="Foto de ella 1" style="width: 400px;display: block; margin: auto; height: auto;">
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        <div class="gallery-slide">
+            <img src="imagenes/fotopapa2.jpg" alt="Foto de ella 1" style="width: 200px;displaY: block; margin: auto; height: auto;justify-content: center;">
+            <img src="imagenes/fotomama.jpg" alt="Foto de ella 1" style="width: 200px;displaY: block; margin: auto; height: auto;justify-content: center;">
+        </div>
+        <div class="gallery-slide">
+            <img src="imagenes/fotoh1.jpg" alt="Foto de ella 1" style="width: 300px;displaY: block; margin: auto; height: auto;justify-content: center;">
+            <img src="imagenes/fotohh2.jpg" alt="Foto de ella 1" style="width: 300px;displaY: block; margin: auto; height: auto;justify-content: center;">
+        </div>
+        <div class="gallery-slide">
+            <img src="imagenes/rr1.jpg" alt="Foto de ella 1" style="width: 300px;displaY: block; margin: auto; height: auto;justify-content: center;">
+            <img src="imagenes/rr2.jpg" alt="Foto de ella 1" style="width: 300px;displaY: block; margin: auto; height: auto;justify-content: center;">
+        </div>
+        <div class="gallery-slide">
+            <img src="imagenes/f1.jpg" alt="Foto de ella 1" style="width: 300px;displaY: block; margin: auto; height: auto;justify-content: center;">
+            <img src="imagenes/f2.jpg" alt="Foto de ella 1" style="width: 300px;displaY: block; margin: auto; height: auto;justify-content: center;">
+        </div>
+        <div class="gallery-slide">
+            <img src="imagenes/F3.jpg" alt="Foto de ella 1" style="width: 300px;displaY: block; margin: auto; height: auto;justify-content: center;">
+            <img src="imagenes/F4.jpg" alt="Foto de ella 1" style="width: 300px;displaY: block; margin: auto; height: auto;justify-content: center;">
+        </div>
+        <div class="gallery-slide">
+            <img src="imagenes/F5.jpg" alt="Foto de ella 1" style="width: 200px;displaY: block; margin: auto; height: auto;justify-content: center;">
+            <img src="imagenes/F6.jpg" alt="Foto de ella 1" style="width: 200px;displaY: block; margin: auto; height: auto;justify-content: center;">
+        </div>
+    
+        <!-- Controles de la Galería -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Línea de Tiempo Sincronizada -->
+    <div class="timeline-container">
+        <div class="timeline-event active">
+            <h2>4 de Abril </h2>
+            <p>"Feliz cumpleaños, Coñe! No hay un solo día en el que no agradezca tenerte en mi vida. Tu sonrisa ilumina todo a tu alrededor, y me siento tan afortunado de compartir tantos momentos contigo."</p>
+        </div>
+        <div class="timeline-event">
+            <h2>25 de Abril</h2>
+            <p>"Feliz cumpleaños, Negro. Hoy celebramos tu vida, tu fuerza y tu manera única de ver el mundo. Que este nuevo año te traiga aún más aventuras, logros y sonrisas."</p>
+        </div>
+        <div class="timeline-event">
+            <h2>24 de Abril</h2>
+            <p>"Negro, gracias por ser ese compañero de vida, ese confidente y ese ejemplo. En tu cumpleaños te deseo que se cumplan todos tus sueños. ¡Felicidades!"</p>
+        </div>
+        <div class="timeline-event">
+            <h2>25 de Abril</h2>
+            <p>"En este día tan especial quiero recordarte cuánto te valoro. Tenerte como hermano ha sido uno de los mayores regalos de mi vida. ¡Feliz cumpleaños!"</p>
+        </div>
+        <div class="timeline-event">
+            <h2>25 de Abril</h2>
+            <p>"Tu fortaleza, tu sentido del humor y tu corazón enorme hacen de ti alguien inolvidable. Me siento orgulloso de llamarte mi hermano. ¡Feliz cumpleaños!"</p>
+        </div>
+        <div class="timeline-event">
+            <h2>25 de Abril</h2>
+            <p>"Negro, que la vida te siga sonriendo como tú nos haces sonreír a todos. Te mereces lo mejor hoy y siempre. ¡Feliz cumpleaños!"</p>
+        </div>
+        <div class="timeline-event">
+            <h2>25 de Abril</h2>
+            <p>"Gracias por ser un hermano increíble, por estar siempre cuando te necesito y por hacerme sentir muy orgulloso de ti . ¡Te deseo un cumpleaños inolvidable!"</p>
+        </div>
+    </div>
+
+    <!-- Elemento de audio -->
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll('.gallery-slide');
+            let events = document.querySelectorAll('.timeline-event');
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+
+            // Oculta todas las imágenes y eventos
+            slides.forEach(slide => slide.style.display = 'none');
+            events.forEach(event => event.classList.remove('active'));
+
+            // Muestra la imagen y evento correspondiente al índice actual
+            slides[slideIndex].style.display = 'block';
+            events[slideIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
